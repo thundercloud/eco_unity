@@ -1,0 +1,87 @@
+@import global
+
+#header-menu
+  margin-left: auto
+  margin-right: auto
+  padding: 24px 0
+  text-align: right
+
+#home
+  width: 64px
+  height: 72px
+  float: left
+  display: block
+  background: url("/images/home.png") 100% 100% no-repeat
+  background-size: cover
+
+#recycling
+  width: 60px
+  height: 72px
+  float: left
+  display: block
+  background: url("/images/recycling.png") 100% 100% no-repeat
+  background-size: cover
+
+#transport
+  width: 75px
+  height: 72px
+  float: left
+  display: block
+  background: url("/images/transport.png") 100% 100% no-repeat
+  background-size: cover
+
+#construction
+  width: 75px
+  height: 72px
+  float: left
+  display: block
+  background: url("/images/construction.png") 100% 100% no-repeat
+  background-size: cover  
+
+#alt_energy
+  width: 70px
+  height: 72px
+  float: left
+  display: block
+  background: url("/images/alt-energy.png") 100% 100% no-repeat
+  background-size: cover
+
+#contacts
+  width: 75px
+  height: 72px
+  float: left
+  display: block
+  background: url("/images/contacts.png") 100% 100% no-repeat
+  background-size: cover
+
+ul.menu
+  li
+    list-style-type: none
+    display: inline-block
+    &:hover
+      ul.submenu
+        display: block
+    a
+      font-size: 110%
+      padding: 0 5px
+      color: $text-color
+      text-decoration: none
+      &:hover
+        background-color: $bg-color 
+        font-weight: bold
+
+ul.submenu
+  display: none
+  position: absolute
+  width: 150px
+  background-color: $bg-color
+  text-align: left 
+  li
+    a
+      font-size: 110%
+      padding: 5px
+      color: $text-color
+      text-decoration: none
+      display: block
+      &:hover
+        font-weight: bold
