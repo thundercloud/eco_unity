@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   end
 
   def recycling
+    #@articles = Article.where('tag = Tag')
+    #@articles = Article.all
   end
 
   def transport

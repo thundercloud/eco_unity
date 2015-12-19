@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  #resources :tags
+  #resources :articles
   get '/contacts', to: 'pages#contacts'
   get '/recycling', to: 'pages#recycling'
   get '/transport', to: 'pages#transport'
