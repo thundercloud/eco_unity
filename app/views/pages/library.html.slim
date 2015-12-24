@@ -1,0 +1,4 @@
+h1 = @tag.name
+
+- @articles.each do |article|
+  = render 'layouts/article', :locals => {:article => article}
