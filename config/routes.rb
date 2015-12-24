@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   
-  #resources :tags
-  #resources :articles
+  resources :tags
+  resources :articles
   get '/contacts', to: 'pages#contacts'
-  get '/recycling', to: 'pages#recycling'
-  get '/transport', to: 'pages#transport'
-  get '/construction', to: 'pages#construction'
-  get '/alt_energy', to: 'pages#alt_energy'
+  get '/library', to: 'pages#library'
 
   root :to => 'pages#home'
 
