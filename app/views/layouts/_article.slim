@@ -1,0 +1,7 @@
+div class="article"
+  h3 = locals[:article].title
+  p = locals[:article].content
+
+  - locals[:article].tags.each do |tag|
+    =link_to tag.name, library_path(:tag_id => tag.id) 
+    

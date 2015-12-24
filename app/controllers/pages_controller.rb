@@ -2,18 +2,9 @@ class PagesController < ApplicationController
   def home
   end
 
-  def recycling
-    #@articles = Article.where('tag = Tag')
-    #@articles = Article.all
-  end
-
-  def transport
-  end
-
-  def construction
-  end
-
-  def alt_energy
+  def library
+    @tag = Tag.find(params[:tag_id])
+    @articles = @tag.articles
   end
 
   def contacts
