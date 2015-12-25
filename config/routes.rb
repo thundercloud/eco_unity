@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
-  #resources :tags
-  #resources :articles
+  resources :tags
+  resources :articles
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
+<<<<<<< HEAD
   get '/alt_energy', to: 'pages#alt_energy'
+=======
+>>>>>>> library
 
   root :to => 'pages#home'
 
