@@ -9,8 +9,13 @@ html
 
   body 
     .container
+      = render 'layouts/headeradmin'
+      
       div
-        == yield
-      .clear  
-      = render "layouts/footer"
-    
+        #left
+          = render 'layouts/tags'
+
+        #right  
+          == yield
+      .clear
+      = render "layouts/footer"    

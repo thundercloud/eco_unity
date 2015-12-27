@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
   get '/admin', to: 'admin#login'
-  get '/admin/dashboard', to: 'admin#dashboard'
+  get '/dashboard', to: 'admin#dashboard'
 
   root :to => 'pages#home'
 
