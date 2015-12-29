@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   
+  devise_for :users
+
+  devise_scope :user do
+    get '/admin', to: 'devise/sessions#new', as: :admin
+  end
+
   resources :tags
   resources :articles
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
-  get '/admin', to: 'admin#login'
-  get '/dashboard', to: 'admin#dashboard'
+  get '/dashboard', to: 'pages#dashboard'
 
   root :to => 'pages#home'
 

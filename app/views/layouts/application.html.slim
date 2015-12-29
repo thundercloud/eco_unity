@@ -9,10 +9,18 @@ html
 
   body 
     .container
-      = render 'layouts/header'
-      = render 'layouts/menu'
-      div
-        == yield
-      .clear  
-      = render "layouts/footer"
-    
+      - if user_signed_in?
+        = render 'layouts/header.admin'
+        div
+          #left
+            = render 'layouts/tags'
+
+          #right  
+            == yield
+      - else
+        = render 'layouts/header'
+        = render 'layouts/menu'
+        div
+          == yield
+      .clear
+      = render "layouts/footer" 
