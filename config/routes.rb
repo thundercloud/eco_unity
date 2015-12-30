@@ -6,11 +6,15 @@ Rails.application.routes.draw do
     get '/admin', to: 'devise/sessions#new', as: :admin
   end
 
-  resources :tags
-  resources :articles
+  authenticate :user do
+    get '/dashboard', to: 'pages#dashboard'
+    resources :tags, only: [:new, :create, :edit, :update, :destroy, :show, :index]
+    resources :articles, only: [:new, :create, :edit, :update, :destroy, :show, :index]
+  end
+
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
-  get '/dashboard', to: 'pages#dashboard'
+  
 
   root :to => 'pages#home'
 
