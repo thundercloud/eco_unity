@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  #devise_for :users
+
+  devise_for :users, :path_names => { :sign_in => "/admin" }
 
   devise_scope :user do
     get '/admin', to: 'devise/sessions#new', as: :admin
