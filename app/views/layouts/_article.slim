@@ -1,8 +1,12 @@
 div class="rounded-box"
   h3 = locals[:article].title
   p 
-    = locals[:article].content.html_safe
+    p.page_text = locals[:article].content.html_safe
 
   - locals[:article].tags.each do |tag|
     =link_to tag.name, library_path(:tag_id => tag.id) 
+
+  div.btn-box
+    .btn
+      = link_to 'Заказать', "#"   
     
