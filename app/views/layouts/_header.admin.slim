@@ -1,5 +1,9 @@
-div class="rounded-box"
-  p Администрирование
-  = current_user.email
-  br
-  = link_to 'Выйти', destroy_user_session_path, :method => :delete
+div.rounded.row
+  = link_to "", dashboard_url, id: "logo-admin"
+  p.logo-admin-text Рабочее место администратора
+  
+div.row
+  ul.menu.control-right
+    li 
+      p Здравствуйте, #{current_user.email}!  
+    li = link_to 'Выйти', destroy_user_session_path, :method => :delete

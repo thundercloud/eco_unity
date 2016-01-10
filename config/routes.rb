@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
   
-  #devise_for :users
-
-  devise_for :users, :path_names => { :sign_in => "/admin" }
-
-  devise_scope :user do
-    get '/admin', to: 'devise/sessions#new', as: :admin
-  end
+  devise_for :users
 
   authenticate :user do
     get '/dashboard', to: 'pages#dashboard'
@@ -16,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
-  
+  get '/order', to: 'pages#order'
 
   root :to => 'pages#home'
 

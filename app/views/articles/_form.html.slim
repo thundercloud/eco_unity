@@ -7,19 +7,21 @@
           li = message
 
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.label "Название"
+    br
+    = f.text_field :title, class: "row"
+  
   .field
-    = f.label :content
-    = f.text_area :content
+    = f.label "Содержание"
+    br
+    = f.text_area :content, class: "content-area"
 
   .field
-  = f.label "Рубрики"
-  = f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b|
-    div class="collection-check-box"
-      = b.check_box
-      = b.label
-  end
+    = f.label "Рубрики"
+    = f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b|
+      div class="collection-check-box"
+        = b.check_box
+        = b.label
 
-
-  .actions = f.submit
+  .actions 
+    = f.submit "Сохранить"

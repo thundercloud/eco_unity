@@ -1,8 +1,8 @@
-h1 Editing tag
+div.row
+  h1.control-left Редактирование рубрики
+  ul.crud-menu.control-right
+    li = link_to 'Показать', @tag
+    li = link_to 'К списку', tags_path
 
 == render 'form'
-
-= link_to 'Show', @tag
-'|
-= link_to 'Back', tags_path
 

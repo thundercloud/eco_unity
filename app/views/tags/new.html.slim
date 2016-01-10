@@ -1,5 +1,6 @@
-h1 New tag
+div.row
+  h1.control-left Добавление рубрики
+  ul.crud-menu.control-right
+    li = link_to 'К списку', tags_path
 
 == render 'form'
-
-= link_to 'Back', tags_path

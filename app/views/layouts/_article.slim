@@ -1,12 +1,13 @@
-div class="rounded-box"
+div.rounded.item
   h3 = locals[:article].title
   p 
-    p.page_text = locals[:article].content.html_safe
+    p.article-text = locals[:article].content.html_safe
 
-  - locals[:article].tags.each do |tag|
-    =link_to tag.name, library_path(:tag_id => tag.id) 
+  div.row
+    - locals[:article].tags.each do |tag|
+      =link_to tag.name, library_path(:tag_id => tag.id), class: 'control-left'
 
-  div.btn-box
+  div.row
     .btn
-      = link_to 'Заказать', "#"   
+      = link_to 'Заказать', order_path(:article_id => locals[:article].id), class: 'control-right'
     

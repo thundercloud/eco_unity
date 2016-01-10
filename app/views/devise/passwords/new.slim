@@ -1,0 +1,11 @@
+div
+  div.user-form
+    h2 Забыли пароль?
+
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+      = f.email_field :email, autofocus: true, placeholder: "Логин", class: 'input-user'
+ 
+      div.footer-btn
+        = f.submit "Восстановить пароль", class: 'control-right'
+        = render "devise/shared/links"

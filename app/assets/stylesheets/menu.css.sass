@@ -70,6 +70,22 @@ ul.menu
         background-color: $bg-color 
         font-weight: bold
 
+ul.crud-menu
+  li
+    list-style-type: none
+    display: inline-block
+    &:hover
+      ul.submenu
+        display: block
+    a
+      font-size: 80%
+      padding-right: 3px
+      //color: $text-color
+      text-decoration: none
+      &:hover
+        //background-color: $text-color 
+        font-weight: bold        
+
 ul.submenu
   display: none
   position: absolute

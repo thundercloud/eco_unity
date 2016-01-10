@@ -1,23 +1,15 @@
-h1 Listing articles
+div.row
+  h2.control-left Статьи
+  .btn.control-right
+    = link_to 'Добавить', new_article_path
 
-table
-  thead
-    tr
-      th Title
-      th Content
-      th
-      th
-      th
+- @articles.each do |article|
+  div.rounded.item
+    h3 = article.title
+    p.item-text #{article.content[0...200]} ...
 
-  tbody
-    - @articles.each do |article|
-      tr
-        td = article.title
-        td = article.content
-        td = link_to 'Show', article
-        td = link_to 'Edit', edit_article_path(article)
-        td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Article', new_article_path
+    div.row
+      ul.crud-menu.control-right
+        li = link_to 'Показать', article
+        li = link_to 'Редактировать', edit_article_path(article)
+        li = link_to 'Удалить', article, data: {:confirm => 'Are you sure?'}, :method => :delete

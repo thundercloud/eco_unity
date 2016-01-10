@@ -1,21 +1,25 @@
-h1 Listing tags
+div.row
+  h2.control-left Рубрики
+  .btn
+    = link_to 'Добавить', new_tag_path, class: 'control-right' 
 
-table
-  thead
-    tr
-      th Name
-      th
-      th
-      th
+- @tags.each do |tag|
+  div.rounded.item
+    div.row
+      h3.control-left = tag.name
+      ul.crud-menu.control-right
+        li = link_to 'Показать', tag
+        li = link_to 'Редактировать', edit_tag_path(tag)
+        li = link_to 'Удалить', tag, data: {:confirm => 'Are you sure?'}, :method => :delete
+  
+    div.row
+      #home.tag-img  
+      p.item-text Каждый веб-разработчик знает, что такое текст-«рыба». Текст этот, несмотря на название, не имеет никакого отношения к обитателям водоемов. Используется он веб-дизайнерами для вставки на интернет-страницы и демонстрации внешнего вида контента, просмотра шрифтов, абзацев, отступов и т.д. Так как цель применения такого текста исключительно демонстрационная, то и смысловую нагрузку ему нести совсем необязательно.
 
-  tbody
-    - @tags.each do |tag|
-      tr
-        td = tag.name
-        td = link_to 'Show', tag
-        td = link_to 'Edit', edit_tag_path(tag)
-        td = link_to 'Destroy', tag, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
 
-= link_to 'New Tag', new_tag_path
+  
+
+
+
+
