@@ -9,5 +9,5 @@ div.rounded.item
 
   div.row
     .btn
-      = link_to 'Заказать', order_path(:article_id => locals[:article].id), class: 'control-right'
+      = link_to 'Заказать', new_order_path(:article_id => locals[:article].id), class: 'control-right'
     

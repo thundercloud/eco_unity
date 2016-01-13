@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151227103351) do
+ActiveRecord::Schema.define(version: 20160111184654) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20151227103351) do
   end
 
   add_index "articles_tags", ["article_id", "tag_id"], name: "index_articles_tags_on_article_id_and_tag_id"
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["article_id"], name: "index_orders_on_article_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"

@@ -1,0 +1,11 @@
+div.row
+  h2.control-left Заказы
+
+- @orders.each do |order|
+  div.rounded.item
+    h3 Заказ №#{order.id}. Технология №#{order.article.id} "#{order.article.title}"
+    p.item-text #{order.message[0...200]} ...
+
+    div.row
+      ul.crud-menu.control-right
+        li = link_to 'Показать', order

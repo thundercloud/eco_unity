@@ -1,0 +1,5 @@
+h2 Заказ технологии №#{@article.id} "#{@article.title}"
+
+== render 'form', :article_id => @article.id
+
+//= link_to 'Back', orders_path

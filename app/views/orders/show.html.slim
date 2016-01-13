@@ -1,0 +1,34 @@
+- if user_signed_in?
+  div.rounded.item
+    div.row
+      h3.control-left Заказ №#{@order.id}. Технология "#{@order.article.title}" (№#{@order.article.id})
+      ul.crud-menu.control-right
+        li = link_to 'К списку', orders_path
+  
+    p
+      strong Контактное лицо: 
+      = @order.name
+    p  
+      strong Контактный email: 
+      = @order.email
+    p
+      strong Сообщение:
+      br
+      = @order.message
+
+- else
+  p#notice = notice
+  h2 Заказ №#{@order.id} принят на обработку! 
+   
+  p
+    strong Технология №#{@order.article.id} "#{@order.article.title}"
+  p 
+    strong Контактное лицо: 
+    = @order.name
+  p  
+    strong Контактный email: 
+    = @order.email  
+
+  div.controls-center
+    = link_to 'Продолжить просмотр сайта', root_path
+

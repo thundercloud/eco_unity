@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
   
   devise_for :users
-
+  resources :orders, except: [:edit, :update, :destoy, :index]
+  
   authenticate :user do
     get '/dashboard', to: 'pages#dashboard'
     resources :tags, only: [:new, :create, :edit, :update, :destroy, :show, :index]
     resources :articles, only: [:new, :create, :edit, :update, :destroy, :show, :index]
+    resources :orders, only: [:index]
   end
 
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
   get '/order', to: 'pages#order'
+  post '/confirmation', to: 'orders#confirmation'
 
   root :to => 'pages#home'
 
