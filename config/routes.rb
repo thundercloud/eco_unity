@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :orders, except: [:edit, :update, :destoy, :index]
+  resources :orders, except: [:edit, :update, :destoy, :index, :show]
   
   authenticate :user do
     get '/dashboard', to: 'pages#dashboard'
