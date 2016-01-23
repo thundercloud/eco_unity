@@ -1,5 +1,5 @@
 class NotifyOrderMailer < ApplicationMailer
-	default from: "chaiko_an@tut.by"
+	default from: "mcn.test.email@gmail.com"
 
 	def sample_email(order)
       @order = order
