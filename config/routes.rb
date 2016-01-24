@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get '/dashboard', to: 'pages#dashboard'
     resources :tags, only: [:new, :create, :edit, :update, :destroy, :show, :index]
     resources :articles, only: [:new, :create, :edit, :update, :destroy, :show, :index]
-    resources :orders, only: [:index]
+    resources :orders, only: [:index, :show]
   end
 
   get '/contacts', to: 'pages#contacts'
