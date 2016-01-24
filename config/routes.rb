@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :orders, except: [:edit, :update, :destoy, :index, :show]
+  resources :orders, except: [:edit, :update, :destoy, :show]
+  get "/confirmation", to: "orders#confirmation"
   
   authenticate :user do
     get '/dashboard', to: 'pages#dashboard'
@@ -12,9 +13,7 @@ Rails.application.routes.draw do
 
   get '/contacts', to: 'pages#contacts'
   get '/library', to: 'pages#library'
-  get '/order', to: 'pages#order'
-  post '/confirmation', to: 'orders#confirmation'
-
+  
   root :to => 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
